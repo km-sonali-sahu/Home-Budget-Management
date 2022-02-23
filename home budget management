@@ -1,0 +1,167 @@
+import java.util.*;
+import java.lang.*;
+abstract class Home_Budget_Management
+{
+  abstract void income();
+  abstract void goal();
+  abstract void savings();
+  abstract void show();
+}
+class Monthly_budget extends Home_Budget_Management
+{
+  Scanner s=new Scanner(System.in);
+  public int men_income,women_income,members,groceries,veg,rent,fees,mobile_recharge,tv_recharge,electricity_bill,gass_bill,newspaper_bill, water_bill,loundry_bill, educational_fund,lic;
+  public double total_income, remaining,total_1;
+  void income()
+  {
+    System.out.println("Enter the the no.of family members");
+    members=s.nextInt();
+    System.out.println("Enter the monthly Men income");
+    men_income=s.nextInt();
+    System.out.println("Enter the monthly Women income");
+    women_income=s.nextInt();
+    total_income=men_income+women_income;
+  }
+  void goal()
+  {
+    System.out.println("enter the total amount you spend for monthly groceries:");
+    groceries=s.nextInt();
+		System.out.println("enter the monthly amount you spend on vegetables:");
+    veg=s.nextInt();
+		System.out.println("enter the monthly rent of house if you stay in rent house");
+    rent=s.nextInt(); 
+		System.out.println("enter the total monthly fees of the children");
+    fees=s.nextInt();
+		System.out.println("enter the total monthly recharge of the mobile");
+    mobile_recharge=s.nextInt();
+		System.out.println("enter the monthly recharge of television");
+    tv_recharge=s.nextInt();
+		System.out.println("enter the electricity bill");
+    electricity_bill=s.nextInt();
+		System.out.println("enter the gass bill");
+    gass_bill=s.nextInt();
+		System.out.println("enter the newspaper bill");
+    newspaper_bill=s.nextInt();
+		System.out.println("enter the water bill");
+    water_bill=s.nextInt();
+		System.out.println("enter the iron loundry bill");
+    loundry_bill=s.nextInt();
+  }
+  void savings()
+  {
+    System.out.println("enter the monthly amount you spend on LIC ");
+    lic=s.nextInt();
+		System.out.println("enter the monthly amount you spend on educational fund");
+    educational_fund=s.nextInt();
+    total_1=groceries+veg+rent+fees+mobile_recharge+tv_recharge+electricity_bill+gass_bill+newspaper_bill+ water_bill+loundry_bill+ educational_fund+lic;
+    remaining=total_income-total_1;
+  }
+  void show()
+  {
+    System.out.println("//////********FAMILY INCOME********//////"+'\n');
+    System.out.println("family members: "+members);
+    System.out.println("Income of men: "+ men_income);
+    System.out.println("Income of women: "+ women_income);  
+    System.out.println("Total income "+total_income ); 
+
+    System.out.println("//////********NEED OF A FAMILY ********//////"+'\n');
+    System.out.println("Need Amount spend for monthly groceries: "+groceries);
+    System.out.println("Need Amount spend  monthly for vegetbles: "+veg);
+    System.out.println("Need Amount spend  monthly for house rent: "+rent);
+    System.out.println("Need Amount for submit fees of children: "+fees);
+    System.out.println("Need Amount for monthly recharge of the mobile: "+ mobile_recharge);
+    System.out.println("Need Amount for monthly recharge of the televison: "+ tv_recharge);
+    System.out.println("Need Amount for monthly electricity bill: "+ electricity_bill);
+    System.out.println("Need Amount for monthly gas bill: "+ gass_bill);
+    System.out.println("Need Amount for monthly newspaper bill: "+ newspaper_bill);
+    System.out.println("Need Amount for monthly water bill: "+ water_bill);
+    System.out.println("Need Amount for monthly loundry and iron bill: "+loundry_bill);
+
+    System.out.println("//////********SOME FUTURE SAVINGS********//////"+'\n');
+    System.out.println("Need monthly amount for spend on LIC: "+lic);
+    System.out.println("Need monthly amount for educational fund: "+ educational_fund);
+    System.out.println("amount spend in a month: "+total_1);
+    System.out.println("Rest amount after end of the month: "+ remaining);
+  }
+}
+class end_of_month extends Home_Budget_Management
+{
+  Scanner s=new Scanner(System.in);
+  public int men_income,women_income,member,groceries,veg,rent,fees,mobile_recharge,tv_recharge,electricity_bill,gass_bill,newspaper_bill, water_bill,loundry_bill, educational_fund,lic;
+  public double total_income, remaining,total_1;
+   
+  void income()
+  {
+    System.out.println("Enter the the no.of family members");
+    member=s.nextInt();
+    System.out.println("Enter the monthly Men income");
+    men_income=s.nextInt();
+    System.out.println("Enter the monthly Women income");
+    women_income=s.nextInt();
+    total_income=men_income+women_income;
+    total_1=groceries+veg+rent+fees+mobile_recharge+tv_recharge+electricity_bill+gass_bill+newspaper_bill+ water_bill+loundry_bill+ educational_fund+lic;
+    remaining=total_income-total_1;
+
+  }
+  void savings()
+  {
+    System.out.println("enter the monthly amount you spend on LIC ");
+    lic=s.nextInt();
+		System.out.println("enter the monthly amount you spend on educational fund");
+    educational_fund=s.nextInt();
+  }
+  void goal()
+  {
+    
+  }
+  void show()
+  {
+    System.out.println("//////********FAMILY INCOME********//////"+'\n');
+    System.out.println("family members: "+member);
+    System.out.println("Income of men: "+  men_income);
+    System.out.println("Income of women: "+  women_income);  
+    System.out.println("Total income "+total_income  ); 
+
+
+    System.out.println("//////********AT THE END OF MONTH********//////"+'\n');
+    System.out.println("Rest amount after end of the month: "+ remaining);
+    System.out.println("Strategy to maintain the home budget");
+		System.out.println("1.you have to use 50 % of your sallary in your needs");
+		System.out.println("2.you have to use 30 % of your salary in your wants");
+		System.out.println("3.you have to save 20 % your salary for your future");
+
+
+ }
+}
+  
+class Temp
+{
+  public static void main(String[] args)
+{
+  System.out.println("************WELCOME TO HOME BUDGET MANAGEMENT SYSTEM*************"+'\n');
+  System.out.println("press 1 for Monthly_budget ");
+  System.out.println("press 2 for  end_of_month");
+  int count=0;
+  Scanner s=new Scanner(System.in);
+  int member= s.nextInt();
+  switch(member)
+  {
+    case 1:
+            Monthly_budget i=new   Monthly_budget();
+            i.income();
+            i.goal();
+            i.savings();
+            i.show();
+            break;
+    case 2:
+            end_of_month m=new   end_of_month();
+            m.income();
+            m.savings();
+            m.goal();
+            m.show();
+            break;
+    default:
+              System.out.println("invalid input");
+}
+}
+}
